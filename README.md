@@ -1,1 +1,1 @@
-# Web-JSON-Editor
+# Web JSON Editor
