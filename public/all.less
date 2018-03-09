@@ -1,0 +1,347 @@
+input{
+  outline: none;
+  background-color: white;
+}
+select{
+  outline: none;
+  background-color: white;
+  border: 0 !important; /*Removes border*/
+  -webkit-appearance: none !important;  /*Removes default chrome and safari style*/
+  -moz-appearance: none !important;  /*Removes default style Firefox*/
+}
+html{
+  height: 100%;
+}
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #f5f5f5;
+  font-family: 'Oswald', sans-serif;
+}
+
+.allContent{
+  width: 100%;
+  min-height: 100px;
+}
+
+.open_file_zone{
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.open_file_zone>div{
+  width: 100%;
+  height: 100%;
+  border: #b9b9b9 dashed 4px;
+  box-sizing: border-box;
+  transition: all ease-in-out 0.2s;
+  font-size: 40px;
+  color: #7d7d7d;
+  text-align: center;
+  font-weight: 200;
+  display: table;
+  cursor: pointer;
+}
+.open_file_zone>div>.dropZoneInner{
+  display: table-cell;
+  vertical-align: middle;
+}
+.open_file_zone>div>.dropZoneInner>img{
+  margin-left: auto;
+  margin-right: auto;
+  width: 60px;
+  display: block;
+  transition: all 0.2s ease-in-out;
+}
+.open_file_zone>div>.dropZoneInner>span{
+  display: block;
+}
+.loading{
+  width: 100%;
+  height: 100vh;
+  display: table;
+  font-size: 40px;
+  color: #7d7d7d;
+  text-align: center;
+  font-weight: 200;
+}
+.loading>span{
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.workingZone{
+  width: 50%;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.singleElement{
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  background-color: white;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  display: table;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.singleElementArea{
+  //width: 50%;
+}
+
+.singleElementHolder{
+  width: 100%;
+  border: 1px solid #878787;
+  border-radius: 5px;
+  overflow: hidden;
+  display: table-cell;
+}
+
+.singleElementInput{
+  display: table;
+  width: 100%;
+  height: auto;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.SingleInput{
+  padding: 10px;
+  width: 100%;
+  height: auto;
+  border: none;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  font-size: 18px;
+  font-weight: 300;
+  word-wrap: break-word;
+}
+
+.childsContainer{
+  width: 100%;
+  height: auto;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 10px;
+  transition: all 0.2s ease-out;
+}
+
+.singleElement>.name{
+  display: table-cell;
+  width: 100%;
+  height: auto;
+  //padding: 5px;
+  padding-left: 5px;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  border: none;
+  font-size: 18px;
+  color: #373737;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+}
+
+.singleElement>.controls{
+  display: table-cell;
+  width: 110px;
+  height: auto;
+  padding: 0;
+  box-sizing: padding-box;
+  padding-right: 5px;
+}
+
+.singleElement>.controls>.button{
+  width: 50px;
+  padding: 5px;
+  border: #878787 1px solid;
+  text-align: center;
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+  color: black;
+  font-weight: 200;
+}
+
+.singleElementInput>div>.bool{
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+
+.singleElement>.controls>.button:not(:first-child){
+  margin-left: 5px;
+}
+
+@objColor: rgba(255, 0, 0, 0.76);
+.singleElement>.type{
+  text-align: center;
+  width: 80px;
+  border: @objColor 1px solid;
+  color: @objColor;
+  border-radius: 5px;
+  display: table-cell;
+  cursor: pointer;
+}
+
+.rootIndex{
+  width: 5px;
+  height: 5px;
+  padding: 5px;
+  //background-color: aqua;
+  display: table-cell;
+}
+.rootIndex>div{
+  width: 5px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: #696969;
+}
+.Dots{
+  vertical-align: middle;
+  padding-right: 5px;
+  display: table-cell;
+  box-sizing: border-box;
+}
+
+.controlPanel{
+  position: fixed;
+  width: 50%;
+  right: -5px;
+  top: 10px;
+  font-weight: 200;
+}
+.controlPanel>.download{
+  border-radius: 5px;
+  width: 80%;
+  padding: 10px;
+  background-color: #858cff;
+  border: 1px #5177a1 solid;
+  color: white;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.controlPanel>.two_buttons{
+  display: table;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  font-weight: 200;
+  color: black;
+}
+
+.controlPanel>.two_buttons>div:not(.padding){
+  opacity: 0.8;
+  transition: opacity 0.2s ease-out;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  display: table-cell;
+  box-sizing: border-box;
+  border: 1px solid #878787;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.controlPanel>.two_buttons>div:hover{
+  opacity: 1;
+}
+
+.two_buttons>.copy{
+  width: 70%;
+}
+
+.two_buttons>.edit{
+
+}
+
+.alertMes{
+  background-color: white;
+  padding: 15px  40px 15px 40px;
+  position: fixed;
+  bottom: -100px;
+  right: 10px;
+  //box-shadow: 0 0 20px -5px rgba(20, 20, 20, 0.75);
+  font-weight: 100;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid #878787;
+  color: #60b550;
+  opacity: 0;
+  animation: alertAnimation 4s linear;
+}
+
+@keyframes alertAnimation {
+  0%{
+    bottom: -60px;
+    opacity: 0;
+  }
+  10%{
+    bottom: 10px;
+    opacity: 1;
+  }
+  90%{
+    bottom: 10px;
+    opacity: 1;
+  }
+  100%{
+    bottom: 10px;
+    opacity: 0;
+  }
+}
+
+.fakeTextArea{
+  width: 0;
+  height: 0;
+  position: absolute;
+  opacity: 0;
+}
+
+.typeSelector{
+  border: none;
+  width: auto;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .open_file_zone{
+    padding: 10px;
+  }
+  .workingZone{
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px;
+  }
+  .allContent{
+    box-sizing: border-box;
+  }
+  .controlPanel{
+    position: static;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+  }
+  .controlPanel>.download{
+    width: 100%;
+  }
+  .controlPanel>.two_buttons{
+    width: 100%;
+  }
+}
