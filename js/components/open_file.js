@@ -33,10 +33,11 @@ export class OpenFile extends React.Component{
     InputDone(e){
         e.preventDefault();
         e.stopPropagation();
+        console.log(e.target.files);
         this.SetNewJson(e.target.files[0]);
     }
     SetNewJson(file){
-        if(file.type === "application/json"){
+        if(file.name.split(".")[1] === "json"){
             this.setState({isDragOver: false});
             this.props.dropEvent();
             let fileReader = new FileReader();
@@ -58,11 +59,26 @@ export class OpenFile extends React.Component{
             };
         }
         else{
+            //console.log(file);
             alert("file is not .json");
+            this.props.cancelDrop();
+            this.setState({isDragOver: false});
         }
     }
     ClickFileOpen(){
         this.refs.fileInput.click();
+    }
+    NewFile(){
+        this.setState({isDragOver: false});
+        this.props.dropEvent();
+        this.props.loaded({
+            ObjectPropName: {Prop: "Prop Value"},
+            ArrayPropName:[1, 2, 3],
+            BooleanPropName: true,
+            NumberPropName: 0,
+            StringPropName: "Prop Value"
+        });
+        console.log("kek");
     }
     render(){
         return(
@@ -74,11 +90,16 @@ export class OpenFile extends React.Component{
                     onDragEnter={this.DragEnter}
                     onDragLeave={this.DragLeave}
                     onDrop={this.DragDropped}
-                    onClick={this.ClickFileOpen}
                 >
                     <div className="dropZoneInner">
                         <img style={{transform: `rotate(${this.state.isDragOver?180:0}deg)`}} src={"img/arrow.svg"}/>
-                        {this.state.isDragOver?<span>Now drop it</span>:<span>Drag <span style={{color:"#698fff"}}>.json</span> file here<p style={{fontSize: "30px", opacity: "0.8", marginTop: "-5px"}}>Or click to chose</p></span>}
+                        {this.state.isDragOver ?
+                            <span>Now drop it</span> :
+                            <span>Drag <span style={{color:"#698fff"}}>.json</span> file here
+                                <p onClick={this.ClickFileOpen} className="clickToChose">Or click to chose</p>
+                            </span>
+                        }
+                        <div onClick={this.NewFile} className="createNewButton">Create new file</div>
                     </div>
                 </div>
                 <input
