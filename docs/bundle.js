@@ -29418,6 +29418,7 @@ var OpenFile = exports.OpenFile = function (_React$Component) {
             e.preventDefault();
             e.stopPropagation();
             this.SetNewJson(e.target.files[0]);
+            console.log(e.target.files);
         }
     }, {
         key: "SetNewJson",
