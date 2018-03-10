@@ -1,4 +1,4 @@
-# Web JSON Editor
+## Web JSON Editor
 Небольшой редактор json файлов, визуализирующий данные.
 #### Используемые технологии:
 - [React](https://reactjs.org/)
