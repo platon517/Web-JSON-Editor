@@ -29451,6 +29451,20 @@ var OpenFile = exports.OpenFile = function (_React$Component) {
             this.refs.fileInput.click();
         }
     }, {
+        key: "NewFile",
+        value: function NewFile() {
+            this.setState({ isDragOver: false });
+            this.props.dropEvent();
+            this.props.loaded({
+                ObjectPropName: { Prop: "Prop Value" },
+                ArrayPropName: [1, 2, 3],
+                BooleanPropName: true,
+                NumberPropName: 0,
+                StringPropName: "Prop Value"
+            });
+            console.log("kek");
+        }
+    }, {
         key: "render",
         value: function render() {
             return _react2.default.createElement(
@@ -29464,8 +29478,7 @@ var OpenFile = exports.OpenFile = function (_React$Component) {
                         onDragOver: this.DragOver,
                         onDragEnter: this.DragEnter,
                         onDragLeave: this.DragLeave,
-                        onDrop: this.DragDropped,
-                        onClick: this.ClickFileOpen
+                        onDrop: this.DragDropped
                     },
                     _react2.default.createElement(
                         "div",
@@ -29487,9 +29500,14 @@ var OpenFile = exports.OpenFile = function (_React$Component) {
                             " file here",
                             _react2.default.createElement(
                                 "p",
-                                { style: { fontSize: "30px", opacity: "0.8", marginTop: "-5px" } },
+                                { onClick: this.ClickFileOpen, className: "clickToChose" },
                                 "Or click to chose"
                             )
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            { onClick: this.NewFile, className: "createNewButton" },
+                            "Create new file"
                         )
                     )
                 ),
