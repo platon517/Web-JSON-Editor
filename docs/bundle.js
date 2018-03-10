@@ -29442,7 +29442,7 @@ var OpenFile = exports.OpenFile = function (_React$Component) {
                     });
                 };
             } else {
-                console.log(file.type);
+                console.log(file);
                 alert("file is not .json");
                 this.props.cancelDrop();
                 this.setState({ isDragOver: false });
