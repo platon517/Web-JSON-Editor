@@ -29417,8 +29417,8 @@ var OpenFile = exports.OpenFile = function (_React$Component) {
         value: function InputDone(e) {
             e.preventDefault();
             e.stopPropagation();
-            this.SetNewJson(e.target.files[0]);
             console.log(e.target.files);
+            this.SetNewJson(e.target.files[0]);
         }
     }, {
         key: "SetNewJson",
@@ -29443,7 +29443,7 @@ var OpenFile = exports.OpenFile = function (_React$Component) {
                     });
                 };
             } else {
-                console.log(file);
+                //console.log(file);
                 alert("file is not .json");
                 this.props.cancelDrop();
                 this.setState({ isDragOver: false });
