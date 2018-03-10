@@ -29425,7 +29425,7 @@ var OpenFile = exports.OpenFile = function (_React$Component) {
         value: function SetNewJson(file) {
             var _this2 = this;
 
-            if (file.type === "application/json") {
+            if (file.name.split(".")[1] === "json") {
                 this.setState({ isDragOver: false });
                 this.props.dropEvent();
                 var fileReader = new FileReader();
